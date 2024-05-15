@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include 'header.html';
+    include 'Header/header.html';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +46,9 @@
         <section>
             
         </section>
+            <?php
+    include 'footer.php';
+    ?>
     </div>
 </body>
 
