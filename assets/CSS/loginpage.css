@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: rgba(87, 196, 217, 1);
+}
+.first-title
+{
+    font-size: 25px;
+    margin-top: 90px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+}
+
+.logincontainer {
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 300px;
+}
+
+.inloggen {
+    text-align: center;
+    height: 150%;
+    width: 40%;
+}
+
+.inloggen-title {
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    border-radius: 20px;
+    margin-top: 30px;
+    text-align: center;
+    border: 6px solid black;
+    font-size: 20px;
+    height: 80px;    transition: transform 0.3s; 
+    width: 300px;
+}
+
+form input[type="submit"] {
+    border: none;
+    border-radius: 10px;
+    height: 60px;
+    width: 150px;
+    background-color: rgba(4, 238, 126, 1);
+    transition: transform 0.3s; 
+    color: white; 
+}
+form input[type="submit"]:hover {
+    transform: scale(1.5);
+    background-color: rgb(0, 182, 94);
+
+}
