@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body
+{
+    background-color: rgba(87, 196, 217, 1);
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 850px;
+}
+.contactformcontainer
+{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    height: 700px;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form h1
+{
+    font-size: 96px;
+}
+form input
+{
+    text-align: center;
+    font-size: 35px;
+    height: 100px;
+    border: 5px solid black;
+    width: 700px;
+    margin-top: 60px;
+}
+#naam, #email
+{
+ height: 100px;
+}
+#opmerking
+{
+    height: 600px;
+}
+form input[type="submit"] {
+    border: none;
+    border-radius: 10px;
+    height: 120px;
+    width: 200px;
+    background-color: rgba(4, 238, 126, 1);
+    transition: transform 0.3s; 
+    color: white; 
+}
+form input[type="submit"]:hover {
+    transform: scale(1.2);
+    background-color: rgb(0, 182, 94);
+
+}
