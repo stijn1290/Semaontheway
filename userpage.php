@@ -21,17 +21,23 @@
         </div>
         <div class="boxcontainer">
             <div class="boxname">
-                <h1>Silvano</h1>
+                <h1>" Gebruikers naam "</h1>
             </div>
             <div class="infobuttons">
-                <button class="blueboxes" onclick="click();">
-                    <h1>debradge@gmail.com</h1>
+                <div class="blueboxes">
+                    <h1>usersmail@gmail.com</h1>
                     <h1>06-1856285</h1>
-                </button>
-                <button class="blueboxes">
-                    <h1>Gebruiker: De Bradge</h1>
+                    <button>
+                    <img src="img/editicon.png" alt="">
+                    </button>                </div>                    
+
+                <div class="blueboxes">
+                    <h1>Gebruiker: -----</h1>
                     <h1>Wachtwoord: *******</h1>
-                </button>
+                    <button>
+                    <img src="img/editicon.png" alt="">
+                    </button>
+                </div>
             </div>
         </div>
     </div>

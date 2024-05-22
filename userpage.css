@@ -38,7 +38,7 @@ body {
     justify-content: center;
     align-self: center;
     height: 1000px;
-    width: 70%;
+    width: 60%;
     border-radius: 70px;
     background-color: rgba(217, 217, 217, 0.9);
     opacity: 0.9;
@@ -66,9 +66,20 @@ body {
     width: 700px;
     height: 260px;
 }
-
 .blueboxes h1{
     font-size: 45px;
     color: white;
     text-align: center;
+}
+.blueboxes button
+{
+    margin-left: 20px;
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
+}
+.blueboxes img
+{
+    width: 97%;
+    height: 97%;
 }
