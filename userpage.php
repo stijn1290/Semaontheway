@@ -17,25 +17,28 @@
 <body>
     <div class="container">
         <div class="title-myaccount">
-            <h1>Mijn Account</h1>
+            <h1>- Gebruikers naam</h1>
         </div>
         <div class="boxcontainer">
-            <div class="boxname">
-                <h1>" Gebruikers naam "</h1>
-            </div>
+        <div class="infobuttons">
+                <button class="blueboxes">
+                <a id="grooteletters" class="active" href="mijnrijzen.php">Bekijk mijn rijzen</a>
+
+                </button>
             <div class="infobuttons">
                 <div class="blueboxes">
                     <h1>usersmail@gmail.com</h1>
                     <h1>06-1856285</h1>
                     <button>
-                    <img src="img/editicon.png" alt="">
-                    </button>                </div>                    
+                        <img src="img/editicon.png" alt="Edit Knop">
+                    </button>
+                </div>
 
                 <div class="blueboxes">
                     <h1>Gebruiker: -----</h1>
                     <h1>Wachtwoord: *******</h1>
                     <button>
-                    <img src="img/editicon.png" alt="">
+                        <img src="img/editicon.png" alt="Edit Knop">
                     </button>
                 </div>
             </div>
@@ -50,4 +53,5 @@
         console.log("Clicked");
     }
 </script>
+
 </html>
