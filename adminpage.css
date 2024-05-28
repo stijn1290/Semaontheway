@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: rgba(87, 196, 217, 1);
+}
+
+nav {
+    padding: 25px;
+}
+
+.verlaat-beheer-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 200px;
+    background-color: rgba(0, 148, 255, 1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.verlaat-beheer-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.verlaat-beheer-button:hover {
+    background-color: rgba(0, 128, 230, 1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.admin-buttoncontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    padding: 100px;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.admin-buttoncontainer h1 {
+    font-size: 60px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.admin-buttoncontainer button {
+    width: 120%;
+    height: 70px;
+    margin: 5px;
+    background-color: rgba(0, 148, 255, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form input {
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 148, 255, 1);
+    margin-bottom: 40px;
+    width: 100%;
+}
+.admin-buttoncontainer button:hover {
+    background-color: rgba(0, 128, 230, 1);
+    transform: translateY(-3px);
+}
+
+.admin-buttoncontainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+header,
+footer {
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+form input[type="submit"] {
+    background-color: red;
+}
