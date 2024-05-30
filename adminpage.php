@@ -23,7 +23,7 @@
                 <form action="">
                     <input name="prijs" type="text" placeholder="Vul de prijs in.">
                     <input name="Eindbestemming" type="text" placeholder="Vul de Eindbestemming in.">
-                    <input name="prijs" type="text" placeholder="Vul de prijs in.">
+                    <input name="maatschapij" type="text" placeholder="Vul de maatschapij in.">
                     <input type="submit">
                 </form>
             </div>
@@ -33,7 +33,7 @@
                 <form action="">
                     <input name="prijs" type="text" placeholder="Vul de prijs in.">
                     <input name="Eindbestemming" type="text" placeholder="Vul de Eindbestemming in.">
-                    <input name="prijs" type="text" placeholder="Vul de prijs in.">
+                    <input name="maatschapij" type="text" placeholder="Vul de maatschapij in.">
                     <input type="submit">
                 </form>
             </div>
@@ -42,7 +42,7 @@
                 <form action="">
                     <input name="prijs" type="text" placeholder="Vul de prijs in.">
                     <input name="Eindbestemming" type="text" placeholder="Vul de Eindbestemming in.">
-                    <input name="prijs" type="text" placeholder="Vul de prijs in.">
+                    <input name="maatschapij" type="text" placeholder="Vul de maatschapij in.">
                     <input type="submit">
                 </form>
             </div>
