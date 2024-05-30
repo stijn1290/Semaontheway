@@ -81,7 +81,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px;
+  height: 468px;
   width: 271px;
   background-color: #04ee7e;
   border-radius: 40px;
@@ -150,22 +150,4 @@ input {
     flex-direction: column;
     align-items: center;
     gap: 60px;
-}
-.vakantie{
-  height: 365px;
-  width: 550px;
-  background-color: #04ee7e;
-  border-radius: 40px;
-  gap: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center ;
-  justify-content: space-around;
-}
-.vakantieresultaten{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
 }

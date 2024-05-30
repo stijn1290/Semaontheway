@@ -20,6 +20,7 @@
             <h1>Sema On The Way Login</h1>
         </div>
     </div>
+    
     <div class="container">
         <div class="logincontainer">
             <div class="inloggen">
@@ -48,9 +49,6 @@
         </section>
 
     </div>
-                <?php
-    include 'footer.php';
-    ?>
 </body>
 
 </html>
