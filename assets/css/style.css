@@ -1,41 +1,153 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: black;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
 }
-button, input{
+body {
+  background-color: rgba(87, 196, 217, 1);
+}
+button,
+input {
+  height: 50px;
+  width: 150px;
+}
+.blauwedeel {
+  height: 193px;
+  width: 100vw;
+  background-color: #0094ff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.kolomfooter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 40px;
+}
+#witteletters {
+  color: white;
+}
+#oranjeletters {
+  color: coral;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.groenedeel {
+  height: 96px;
+  width: 100vw;
+  background-color: #04ee7e;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  gap: 500px;
+}
+.vakantieafbeelding {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+}
+.vakantiezoeken {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.elementsinafbeelding {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.groeneblokkenrij {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+.zoekenblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 468px;
+  width: 271px;
+  background-color: #04ee7e;
+  border-radius: 40px;
+}
+.reclamekorting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 299px;
+  width: 381px;
+  background-color: #04ee7e;
+  border-radius: 40px;
+  font-size: 47px;
+}
+.formulierflex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+#boxstyle{
+    background-color: blue;
+    color: white;
     height: 50px;
-    width: 150px;
+    width: 250px;
+    margin-top: 25px;
+    transition: transform 0.3s; 
+    border-radius: 25px;
 }
-.blauwedeel{
-    height: 193px;
-    width: 100vw;
-    background-color: #0094FF;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+#boxstyle:hover
+{
+    background-color: rgb(0, 83, 143);
+    transform: scale(1.2); 
 }
-.kolomfooter{
+.overonsblok{
+    width: 1115px;
+    height: 554px;
+    background-color: #04ee7e;
+    border-radius: 50px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-left: 40px ;
+    align-items: center;
+    gap: 40px;
+    font-size: 25px;
 }
-#witteletters{
-    color: white;
-}
-.groenedeel{
-    height: 96px;
-    width: 100vw;
-    background-color: #04EE7E;
+.overonstitel{
+    height: 79px;
+    width: 499px;
+    background-color: white;
+    border-radius: 40px;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    margin-right: 20px;
-    gap: 500px;
+}
+.overonstekst{
+    height: 396px;
+    width: 1020px;
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
 }
