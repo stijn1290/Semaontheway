@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include 'Header/header.html';
+    include 'Header/header.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +18,11 @@
     <section>
         <div class="container">
             <div class="contactformcontainer">
-                <form action="">
+                <form action="functions/contactform.php" method="POST">
                     <h1>Neem contact met ons op</h1>
-                    <input type="text" id="email" placeholder="Voer uw e-mailadres in">
-                    <input type="text" id="naam" placeholder="Voer uw naam in">
-                    <input type="text"  id="opmerking" placeholder="Opmerking">
+                    <input type="text" id="email" placeholder="Voer uw e-mailadres in" name="email">
+                    <input type="text" id="naam" placeholder="Voer uw naam in" name="naam">
+                    <input type="text"  id="opmerking" placeholder="Opmerking" name="opmerking">
                     <input type="submit" value="Submit" placeholder="Verzenden">
                 </form>
             </div>

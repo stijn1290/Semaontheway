@@ -1,9 +1,14 @@
+<?php
+include("functions/connection.php");
+session_start();
+if($_SESSION['logged_in'] == true){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php
-    include 'Header/header.html';
+    include 'Header/header.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,31 +22,25 @@
 <body>
     <div class="container">
         <div class="title-myaccount">
-            <h1>- Gebruikers naam</h1>
+            <h1><?php echo $_SESSION["username"];?></h1>
         </div>
         <div class="boxcontainer">
         <div class="infobuttons">
                 <button class="blueboxes">
                 <a id="grooteletters" class="active" href="mijnrijzen.php">Bekijk mijn rijzen</a>
-
                 </button>
             <div class="infobuttons">
                 <div class="blueboxes">
-                    <h1>usersmail@gmail.com</h1>
-                    <h1>06-1856285</h1>
-                    <button>
-                        <img src="img/editicon.png" alt="Edit Knop">
-                    </button>
-                </div>
-
-                <div class="blueboxes">
-                    <h1>Gebruiker: -----</h1>
-                    <h1>Wachtwoord: *******</h1>
+                    <h1>Gebruiker: <?php echo $_SESSION["username"] ?></h1>
+                    <h1>Wachtwoord: <?php echo $_SESSION["password"] ?></h1>
                     <button>
                         <img src="img/editicon.png" alt="Edit Knop">
                     </button>
                 </div>
             </div>
+            <button class="blueboxes">
+                <a id="grooteletters" class="active" href="functions/sessionstop.php">uitloggen</a>
+                </button>
         </div>
     </div>
     <?php
@@ -55,3 +54,5 @@
 </script>
 
 </html>
+<?php
+}
