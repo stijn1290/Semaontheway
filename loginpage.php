@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include 'Header/header.html';
+    include 'Header/header.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +27,9 @@
                 <div class="inloggen-title">
                     <h1>Registeren</h1>
                 </div>
-                <form action="">
-                    <input id="Gebruikersnaam" placeholder="Voer uw Gebruikersnaam in.">
-                    <input id="Wachtwoord" placeholder="Voer uw Wachtwoord in.">
+                <form action="functions/register.php" method="POST">
+                    <input id="Gebruikersnaam" placeholder="Voer uw Gebruikersnaam in." name="username">
+                    <input type="password" id="Wachtwoord" placeholder="Voer uw Wachtwoord in." name="password">
                     <input type="submit" value="Submit" placeholder="Registreer">
                 </form>
             </div>
@@ -37,9 +37,9 @@
             <div class="inloggen-title">
                     <h1>Inloggen</h1>
                 </div>
-                <form action="">
-                    <input id="Gebruikersnaam" placeholder="Voer uw Gebruikersnaam in.">
-                    <input id="Wachtwoord" placeholder="Voer uw Wachtwoord in.">
+                <form action="functions/login.php" method="POST">
+                    <input id="Gebruikersnaam" placeholder="Voer uw Gebruikersnaam in." name="username">
+                    <input type="password" id="Wachtwoord" placeholder="Voer uw Wachtwoord in." name="password">
                     <input type="submit" value="Submit" placeholder="Log in">
                 </form>
             </div>

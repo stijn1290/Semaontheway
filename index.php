@@ -57,7 +57,7 @@
                             <h1><?php echo $row["prijs"]; ?> </h1>
                             <h1> <?php echo $row["vliegmaatschappij"]; ?> </h1>
                             <form action="functions/checkforbooking.php" class="boekenblok" method="POST">
-                              <input type="hidden" name="vluchtid">
+                              <input type="hidden" name="vluchtid" value="<?php echo $row['id']; ?>">
                               <input type="submit" value="boeken">
                             </form>
                          </div>
