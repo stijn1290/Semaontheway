@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include 'Header/header.html';
+    include 'Header/header.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +22,28 @@
         <div class="boxcontainer">
             <div class="infobuttons">
                 <div class="blueboxes">
-                    <h1>Begin Bestemming</h1>
-                    <h1>Eind Bestemming</h1>
-                    <h1>Vlieg maatschapij</h1>
-                    <h1>Datum</h1>
+                    <?php
+                    include("functions/connection.php");
+                    $geboektevlucht = $_SESSION["vluchtid"];
+                    $sqlophalenvlucht = "SELECT `vluchtid` FROM `booked_vlucht`";
+                    $stmt = $conn->prepare($sqlophalenvlucht);
+                    $stmt->execute();
+                    $result = $stmt->fetch();
+                    $vluchtId = $result['vluchtid'];
+                    $sql = "SELECT * FROM vluchten WHERE id LIKE :vluchtid ";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':vluchtid', $vluchtId);
+                    $stmt->execute();
+                    $result = $stmt->fetchAll();
+                    foreach($result as $row)
+                    {
+                        ?>
+                        <h1><?php echo $row["eindbestemming"]; ?> </h1>
+                        <h1><?php echo $row["prijs"]; ?> </h1>
+                        <h1> <?php echo $row["vliegmaatschappij"]; ?> </h1>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
