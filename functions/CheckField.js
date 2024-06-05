@@ -10,5 +10,9 @@ function CheckField() {
         console.log("oer een bestemming in.");
         return false;
     }
+    if(eindbestemming.getElementsByName() === "t")
+        {
+            alert("t");
+        }
     return true;
 }

@@ -6,64 +6,81 @@
     font-style: normal;
 }
 
-body
-{
+body {
     background-color: rgba(87, 196, 217, 1);
 }
-.container
-{
+
+.container {
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 850px;
+    height: auto;
+    min-height: 100vh;
 }
-.contactformcontainer
-{
+
+.contactformcontainer {
     margin-top: 60px;
     display: flex;
     justify-content: center;
     text-align: center;
     width: 90%;
-    height: 700px;
+    max-width: 900px;
+    height: auto;
 }
-form
-{
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
-form h1
-{
-    font-size: 96px;
+
+form h1 {
+    font-size: 48px;
 }
-form input
-{
+
+form input {
     text-align: center;
-    font-size: 35px;
-    height: 100px;
-    border: 5px solid black;
-    width: 700px;
-    margin-top: 60px;
+    font-size: 24px;
+    height: 60px;
+    border: 3px solid black;
+    width: 100%;
+    margin-top: 30px;
 }
-#naam, #email
-{
- height: 100px;
+
+#opmerking {
+    height: 300px;
 }
-#opmerking
-{
-    height: 600px;
-}
+
 form input[type="submit"] {
     border: none;
     border-radius: 10px;
-    height: 120px;
-    width: 200px;
+    height: 80px;
+    width: 50%;
+    max-width: 200px;
     background-color: rgba(4, 238, 126, 1);
-    transition: transform 0.3s; 
-    color: white; 
+    transition: transform 0.3s;
+    color: white;
 }
+
 form input[type="submit"]:hover {
     transform: scale(1.2);
     background-color: rgb(0, 182, 94);
+}
 
+@media only screen and (max-width: 768px) {
+    form h1 {
+        font-size: 36px;
+    }
+    form input {
+        font-size: 18px;
+        height: 50px;
+        margin-top: 20px;
+    }
+    #opmerking {
+        height: 200px;
+    }
+    form input[type="submit"] {
+        height: 60px;
+    }
 }
