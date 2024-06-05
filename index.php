@@ -3,7 +3,7 @@
 
 <head>
     <?php
-        include('Header/header.php');
+        include('header.php');
         ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
     <main>
         <section class="vakantiezoeken">
             <div class="vakantieafbeelding">
-                <img src="Header/Assets/Rectangle4.png" alt="">
+                <img src="assets/img/Rectangle4.png" alt="">
                 <div class="elementsinafbeelding">
                     <h1 id="witteletters">Sema On The Way</h1>
                     <nav class="groeneblokkenrij">
@@ -59,6 +59,11 @@
                             <form action="functions/checkforbooking.php" class="boekenblok" method="POST">
                               <input type="hidden" name="vluchtid" value="<?php echo $row['id']; ?>">
                               <input type="submit" value="boeken">
+                              <?php
+                              $_SESSION["bestemming"] = $row["eindbestemming"];
+                              $_SESSION["prijs"] = $row["prijs"];
+                              $_SESSION["vliegmaatschappij"] = $row["vliegmaatschappij"];
+                              ?>
                             </form>
                          </div>
                         <?php

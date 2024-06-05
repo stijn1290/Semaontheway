@@ -12,7 +12,7 @@ if($_SESSION['logged_in'] == true)
     $resultaat = $stmt->execute();
     if($resultaat){
         $_SESSION["vluchtid"] = $vluchtid;
-        echo "boeking geslaagd";
+        header("location:../boekingvoltooid.php");
     }
     else{
         echo "boeking mislukt";
