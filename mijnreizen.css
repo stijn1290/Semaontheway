@@ -42,7 +42,7 @@ body {
     display: flex;
     justify-content: center;
     align-self: center;
-    height: 400px;
+    height: 600px;
     width: 50%;
     border-radius: 70px;
     background-color: rgba(217, 217, 217, 0.9);
@@ -88,4 +88,10 @@ body {
 {
     width: 70%;
     height: 70%;
+}
+.annulerenbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

@@ -4,6 +4,7 @@
     font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: black;
 }
 
 body {
@@ -20,6 +21,7 @@ nav {
     align-items: center;
     height: 60px;
     width: 200px;
+    margin-bottom: 100px;
     background-color: rgba(0, 148, 255, 1);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -33,57 +35,51 @@ nav {
 }
 
 .verlaat-beheer-button:hover {
-    background-color: rgba(0, 128, 230, 1);
+    background-color: rgba(0, 148, 255, 1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     height: 100vh;
+    max-width: 100vw;
     gap: 20px;
 }
 
-.admin-container {
+.adminsidebar {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 30px;
-    width: 90%;
+    background-color: white;
+    gap: 60px;
+    height: 100vh;
+    width: 400px;
+    position: fixed;
+    left: 0;
+    overflow: auto;
 }
 
-.admin-buttoncontainer {
+.admin-elementcontainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1000px;
-    padding: 100px;
-    background-color: rgba(217, 217, 217, 1);
+    cursor: pointer;
+    width: 250px;
+    background-color: rgba(0, 148, 255, 1);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.admin-buttoncontainer h1 {
-    font-size: 60px;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.admin-buttoncontainer button {
-    width: 120%;
-    height: 70px;
-    margin: 5px;
-    background-color: rgba(0, 148, 255, 1);
+.admin-elementcontainer h1 {
+    font-size: 30px;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 form input {
@@ -94,30 +90,111 @@ form input {
     margin-bottom: 40px;
     width: 100%;
 }
-.admin-buttoncontainer button:hover {
+.admin-elementcontainer button:hover {
     background-color: rgba(0, 128, 230, 1);
     transform: translateY(-3px);
 }
 
-.admin-buttoncontainer:hover {
+.admin-elementcontainer:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-header,
-footer {
-    text-align: center;
-    padding: 10px;
-    color: white;
 }
 form input[type="submit"] {
     background-color: red;
 }
-#dropdown
-{
-    margin-bottom: 30px;
-    font-size: 35px;
-    width: 100%;
-    height: 100px;
+.adminelementen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#formtoevoegen{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+}
+#formtoevoegen h1{
+    display: flex;
+    justify-content: center;
+}
+#formtoevoegen input{
+    width: 95%;
+    height: 70px;
+    margin: 10px;
     background-color: rgba(0, 148, 255, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.aanpassenelementen{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 400px;
+    gap: 20px;
+    width: 100%;
+}
+#formaanpassen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+}
+#formaanpassen input{
+    width: 95%;
+    height: 70px;
+    margin: 10px;
+    background-color: rgba(0, 148, 255, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#formaanpassen h1{
+    display: flex;
+    justify-content: center;
+}
+#formverwijderen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+.verwijderenelementen{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 400px;
+    gap: 20px;
+    width: 100%;
+}
+#formverwijderen input{
+    width: 95%;
+    height: 70px;
+    margin: 10px;
+    background-color: rgba(0, 148, 255, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
 }
