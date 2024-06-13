@@ -30,8 +30,10 @@
             <nav class="kolomfooter">
                 <h1 id="witteletters">Nieuwsbrief: </h1>
                 <div>
-                    <input type="text">
-                    <button>aanmelden</button>
+                    <form action="functions/nieuwsbriefregister.php" method="POST">
+                     <input type="text" name="naam">
+                     <input type="submit" value="aanmelden">
+                    </form>
                 </div>
             </nav>
         </div>
