@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
+.logo {
+    max-height: 80%;
+    width: auto;
+    max-width: 40vw; 
+}
+
+.navbuttons {
+    display: flex;
+}
+
+.loginbutton {
+    transition: transform 0.3s;
+    margin-right: 2vw;
+}
+
+.loginbutton:hover {
+    transform: scale(1.2);
+}
+
+.navbuttons a {
+    background-color: rgba(0, 148, 255, 1);
+    color: white;
+    text-decoration: none;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    margin-right: 5vw;
+    padding: 2vw 4vw;
+    border-radius: 5vw;
+    transition: transform 0.3s;
+}
+
+.navbuttons a:hover {
+    background-color: rgb(0, 83, 143);
+    transform: scale(1.2);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+}
+
+.login-image {
+    max-width: 100%;
+    height: auto;
+}

@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include('Header/header.php');
+    include ('header.php');
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +12,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="functions/CheckField.js" defer></script>
+    <link rel="stylesheet" href="js/fieldCheck.js">
 </head>
 
 <body>
     <main>
         <section class="vakantiezoeken">
             <div class="vakantieafbeelding">
-                <img src="Header/Assets/Rectangle4.png" alt="">
+                <img src="assets/img/Rectangle4.png" alt="">
                 <div class="elementsinafbeelding">
                     <h1 id="witteletters">Sema On The Way</h1>
                     <nav class="groeneblokkenrij">
                         <div class="zoekenblock">
                             <h1>Zoek vakantie</h1>
-
                             <form action="index.php" class="formulierflex" method="GET" onsubmit="return CheckField()">
                                 <p>bestemming</p>
                                 <input type="text" name="eindbestemming">
@@ -42,7 +41,7 @@
         <section class="vakantieresultaten">
             <?php
             if (isset($_GET['eindbestemming'])) {
-                include("functions/connection.php");
+                include ("functions/connection.php");
                 $eindbestemming = "%" . $_GET['eindbestemming'] . "%";
                 $sql = "SELECT * FROM vluchten WHERE eindbestemming LIKE :eindbestemming ";
                 $stmt = $conn->prepare($sql);
@@ -59,6 +58,11 @@
                             <form action="functions/checkforbooking.php" class="boekenblok" method="POST">
                                 <input type="hidden" name="vluchtid" value="<?php echo $row['id']; ?>">
                                 <input type="submit" value="boeken">
+                                <?php
+                                $_SESSION["bestemming"] = $row["eindbestemming"];
+                                $_SESSION["prijs"] = $row["prijs"];
+                                $_SESSION["vliegmaatschappij"] = $row["vliegmaatschappij"];
+                                ?>
                             </form>
                         </div>
                         <?php
@@ -82,9 +86,10 @@
     </main>
     <footer>
         <?php
-        include('footer.php');
+        include ('footer.php');
         ?>
     </footer>
 </body>
+<script src="js/fieldCheck.js"></script>
 
 </html>

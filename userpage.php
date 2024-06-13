@@ -8,12 +8,12 @@ if($_SESSION['logged_in'] == true){
 
 <head>
     <?php
-    include 'Header/header.php';
+    include 'header.php';
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loginpage</title>
-    <link rel="stylesheet" href="userpage.css">
+    <link rel="stylesheet" href="assets/CSS/userpage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
@@ -27,14 +27,14 @@ if($_SESSION['logged_in'] == true){
         <div class="boxcontainer">
         <div class="infobuttons">
                 <button class="blueboxes">
-                <a id="grooteletters" class="active" href="mijnrijzen.php">Bekijk mijn rijzen</a>
+                <a id="grooteletters" class="active" href="mijnreizen.php">Bekijk mijn reizen</a>
                 </button>
             <div class="infobuttons">
                 <div class="blueboxes">
                     <h1>Gebruiker: <?php echo $_SESSION["username"] ?></h1>
                     <h1>Wachtwoord: <?php echo $_SESSION["password"] ?></h1>
                     <button>
-                        <img src="img/editicon.png" alt="Edit Knop">
+                        <img src="assets/img/editicon.png" alt="Edit Knop">
                     </button>
                 </div>
             </div>

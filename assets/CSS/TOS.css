@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+header {
+    padding: 40px;
+}
+body {
+    background-color: rgba(87, 196, 217, 1);
+}
+.verlaatTOS {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    border: 5px solid black;
+    background-color: rgb(17, 172, 17);
+    width: 220px;
+    height: 80px;
+}
+.verlaatTOS:hover {
+    background-color: rgb(10, 97, 10);
+}
+.verlaatTOS a {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+}
+.container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+}
+.text-container {
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+li
+{
+    font-size: 24px;
+}
+
+#bigtitle
+{
+    font-size: 50px;
+}
