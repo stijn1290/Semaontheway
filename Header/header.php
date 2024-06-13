@@ -23,17 +23,7 @@
                     <a href="">About</a>
                 </div>
                 <div class="loginbutton">
-                    <?php
-                    if (session_status() == PHP_SESSION_NONE) {
-                        session_start();
-                    }
-                    if($_SESSION['logged_in'] == true){
-                        ?><a href="userpage.php"><img src="Header/Assets/login.png" alt=""></a><?php
-                    }
-                    else{
-                        ?> <a href="loginpage.php"><img src="Header/Assets/login.png" alt=""></a> <?php
-                    }
-                    ?>
+                    <a href="loginpage.php"><img src="Header/Assets/login.png" alt=""></a>
                 </div>
             </div>
         </div>

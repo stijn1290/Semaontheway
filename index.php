@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="js/fieldCheck.js">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
                     <nav class="groeneblokkenrij">
                         <div class="zoekenblock">
                             <h1>Zoek vakantie</h1>
-                            <form action="index.php" class="formulierflex" method="GET">
+                            <form action="index.php" class="formulierflex" method="GET" onsubmit="return CheckField()">
                                 <p>bestemming</p>
                                 <input type="text" name="eindbestemming">
                                 <input type="submit" value="zoek vakantie's" id="boxstyle">
@@ -39,20 +40,18 @@
         </section>
         <section class="vakantieresultaten">
             <?php
-            if(isset( $_GET['eindbestemming'])){
-                        include ("functions/connection.php");
-                        $eindbestemming = "%" . $_GET['eindbestemming']. "%";
-                        $sql = "SELECT * FROM vluchten WHERE eindbestemming LIKE :eindbestemming ";
-                        $stmt = $conn->prepare($sql);
-                        $stmt->bindParam(':eindbestemming', $eindbestemming);
-                        $stmt->execute();
-                        $results = $stmt->fetchAll();
-                    if(count($results)>0)
-                    {
-                        foreach($results as $row)
-                        {
-                            ?>
-                         <div class="vakantie">
+            if (isset($_GET['eindbestemming'])) {
+                include ("functions/connection.php");
+                $eindbestemming = "%" . $_GET['eindbestemming'] . "%";
+                $sql = "SELECT * FROM vluchten WHERE eindbestemming LIKE :eindbestemming ";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':eindbestemming', $eindbestemming);
+                $stmt->execute();
+                $results = $stmt->fetchAll();
+                if (count($results) > 0) {
+                    foreach ($results as $row) {
+                        ?>
+                        <div class="vakantie">
                             <h1><?php echo $row["eindbestemming"]; ?> </h1>
                             <h1><?php echo $row["prijs"]; ?> </h1>
                             <h1> <?php echo $row["vliegmaatschappij"]; ?> </h1>
@@ -65,10 +64,10 @@
                               $_SESSION["vliegmaatschappij"] = $row["vliegmaatschappij"];
                               ?>
                             </form>
-                         </div>
+                        </div>
                         <?php
-                        }
                     }
+                }
             }
             ?>
         </section>
@@ -87,9 +86,10 @@
     </main>
     <footer>
         <?php
-        include('footer.php');
+        include ('footer.php');
         ?>
     </footer>
 </body>
+<script src="js/fieldCheck.js"></script>
 
 </html>
