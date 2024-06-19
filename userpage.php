@@ -1,7 +1,7 @@
 <?php
 include("functions/connection.php");
 session_start();
-if($_SESSION['logged_in'] == true){
+if($_SESSION['rol'] == "user"){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,4 +55,8 @@ if($_SESSION['logged_in'] == true){
 
 </html>
 <?php
+}
+else
+{
+    header("location:adminpage.php");
 }

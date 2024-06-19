@@ -185,3 +185,20 @@ input {
   justify-content: center;
   gap: 40px;
 }
+.buttonsinrij{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 180px;
+  flex-wrap: wrap;
+}
+.meerinfo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 150px;
+  background-color: #0094ff;
+  border-radius: 30px;
+}

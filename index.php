@@ -3,8 +3,8 @@
 
 <head>
     <?php
-    include ('header.php');
-    ?>
+        include('header.php');
+        ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landingspagina</title>
@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="js/fieldCheck.js">
 </head>
 
 <body>
@@ -25,7 +24,7 @@
                     <nav class="groeneblokkenrij">
                         <div class="zoekenblock">
                             <h1>Zoek vakantie</h1>
-                            <form action="index.php" class="formulierflex" method="GET" onsubmit="return CheckField()">
+                            <form action="index.php" class="formulierflex" method="GET">
                                 <p>bestemming</p>
                                 <input type="text" name="eindbestemming">
                                 <input type="submit" value="zoek vakantie's" id="boxstyle">
@@ -40,34 +39,82 @@
         </section>
         <section class="vakantieresultaten">
             <?php
-            if (isset($_GET['eindbestemming'])) {
-                include ("functions/connection.php");
-                $eindbestemming = "%" . $_GET['eindbestemming'] . "%";
-                $sql = "SELECT * FROM vluchten WHERE eindbestemming LIKE :eindbestemming ";
-                $stmt = $conn->prepare($sql);
-                $stmt->bindParam(':eindbestemming', $eindbestemming);
-                $stmt->execute();
-                $results = $stmt->fetchAll();
-                if (count($results) > 0) {
-                    foreach ($results as $row) {
-                        ?>
-                        <div class="vakantie">
-                            <h1><?php echo $row["eindbestemming"]; ?> </h1>
-                            <h1><?php echo $row["prijs"]; ?> </h1>
-                            <h1> <?php echo $row["vliegmaatschappij"]; ?> </h1>
-                            <form action="functions/checkforbooking.php" class="boekenblok" method="POST">
-                                <input type="hidden" name="vluchtid" value="<?php echo $row['id']; ?>">
-                                <input type="submit" value="boeken">
-                                <?php
-                                $_SESSION["bestemming"] = $row["eindbestemming"];
-                                $_SESSION["prijs"] = $row["prijs"];
-                                $_SESSION["vliegmaatschappij"] = $row["vliegmaatschappij"];
-                                ?>
-                            </form>
-                        </div>
+            if(isset( $_GET['eindbestemming'])){
+                        include ("functions/connection.php");
+                        $eindbestemming = "%" . $_GET['eindbestemming']. "%";
+                        $sql = "SELECT * FROM vluchten WHERE eindbestemming LIKE :eindbestemming ";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bindParam(':eindbestemming', $eindbestemming);
+                        $stmt->execute();
+                        $results = $stmt->fetchAll();
+                    if(count($results)>0)
+                    {
+                        foreach($results as $row)
+                        {
+                            ?>
+            <div class="vakantie">
+                <h1><?php echo $row["eindbestemming"]; ?> </h1>
+                <h1><?php echo $row["prijs"]; ?> </h1>
+                <h1> <?php echo $row["vliegmaatschappij"]; ?> </h1>
+                <div class="buttonsinrij">
+                    <form action="functions/checkforbooking.php" class="boekenblok" method="POST">
+                        <input type="hidden" name="vluchtid" value="<?php echo $row['id']; ?>">
+                        <input type="submit" value="boeken">
                         <?php
+                              $_SESSION["bestemming"] = $row["eindbestemming"];
+                              $_SESSION["prijs"] = $row["prijs"];
+                              $_SESSION["vliegmaatschappij"] = $row["vliegmaatschappij"];
+                              ?>
+                    </form>
+                    <div class="meerinfo">
+                        <?php
+                        if($row["eindbestemming"]== "Tokyo")
+                        {
+                        ?>
+                        <a href="tokyo.php">
+                            <h1>Meer info</h1>
+                        </a>
+                        <?php
+                        }
+                        else if($row["eindbestemming"]== "New York")
+                        {
+                        ?>
+                        <a href="newyork.php">
+                            <h1>Meer info</h1>
+                        </a>
+                        <?php
+                        }
+                        else if($row["eindbestemming"]== "Buenos Aires")
+                        {
+                        ?>
+                        <a href="BuenosAires.php">
+                            <h1>Meer info</h1>
+                        </a>
+                        <?php
+                        }
+                        else if($row["eindbestemming"]== "Londen")
+                        {
+                        ?>
+                        <a href="londen.php">
+                            <h1>Meer info</h1>
+                        </a>
+                        <?php
+                        }
+                        else if($row["eindbestemming"]== "San Francisco")
+                        {
+                        ?>
+                        <a href="SanFrancisco.php">
+                            <h1>Meer info</h1>
+                        </a>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <?php
+                        }
                     }
-                }
             }
             ?>
         </section>
@@ -86,10 +133,9 @@
     </main>
     <footer>
         <?php
-        include ('footer.php');
+        include('footer.php');
         ?>
     </footer>
 </body>
-<script src="js/fieldCheck.js"></script>
 
 </html>
