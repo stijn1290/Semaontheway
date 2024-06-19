@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="assets/CSS/TOS.css">
 </head>
 <header>
-    <button class="verlaatTOS">
-        <a href="loginpage.php">Verlaat TOS</a>
-    </button>
 </header>
 
 <body>
     <Section>
         <div class="container">
+        <button class="verlaatTOS">
+        <a href="loginpage.php">Verlaat TOS</a>
+</button>
             <div class="text-container">
             <h1 id="bigtitle">1. Gebruiken van dienst</h1>    
             <li>U staat toe dat wij uw data kunnen gebruiken voor trainings doeleinde</li>
