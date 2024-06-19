@@ -2,6 +2,8 @@
 session_start();
 include 'header.php';
 include("functions/connection.php");
+if($_SESSION['rol'] == "user")
+{
 ?>
 
 <!DOCTYPE html>
@@ -24,15 +26,14 @@ include("functions/connection.php");
             <div class="infobuttons">
                 <div class="blueboxes">
                     <?php
-                    $geboektevlucht = $_SESSION["vluchtid"];
-                    $sqlophalenvlucht = "SELECT `vluchtid` FROM `booked_vlucht` WHERE `vluchtid` = :vluchtid";
+                    $geboektevlucht = $_SESSION["userid"];
+                    $sqlophalenvlucht = "SELECT `vluchtid` FROM `booked_vlucht` WHERE `userid` = :userid";
                     $stmt = $conn->prepare($sqlophalenvlucht);
-                    $stmt->bindParam(':vluchtid', $geboektevlucht);
+                    $stmt->bindParam(':userid', $geboektevlucht);
                     $stmt->execute();
                     $result = $stmt->fetch();
-                    $vluchtId = $result['vluchtid'];
-                    
-                    if ($vluchtId) {
+                    if ($result) {
+                        $vluchtId = $result['vluchtid'];
                         $sql = "SELECT v.*, bv.id FROM booked_vlucht bv join vluchten v on bv.vluchtid = v.id WHERE vluchtid = :vluchtid";
                         $stmt = $conn->prepare($sql);
                         $stmt->bindParam(':vluchtid', $vluchtId);
@@ -52,13 +53,16 @@ include("functions/connection.php");
 
 
 
-                            // $_SESSION["bestemming"] = $row["eindbestemming"];
-                            // $_SESSION["prijs"] = $row["prijs"];
-                            // $_SESSION["vliegmaatschappij"] = $row["vliegmaatschappij"];
-                            // $_SESSION["id"] = $row["id"];
+                             $_SESSION["bestemming"] = $row["eindbestemming"];
+                             $_SESSION["prijs"] = $row["prijs"];
+                             $_SESSION["vliegmaatschappij"] = $row["vliegmaatschappij"];
+                             $_SESSION["id"] = $row["id"];
                         }
                     } else {
-                        echo "Geen geboekte vlucht gevonden";
+                        ?>
+                        <h1>Geen geboekte vlucht </h1>
+                        <h1>U kunt een vlucht boeken via de hoofdpagina</h1>
+                        <?php
                     }
                     ?>
 
@@ -73,3 +77,10 @@ include("functions/connection.php");
     </div>
 </body>
 </html>
+<?php
+}
+else
+{
+    header("location:loginpage.php");
+}
+?>

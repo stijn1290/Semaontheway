@@ -1,7 +1,7 @@
 <?php
 include("functions/connection.php");
 session_start();
-if($_SESSION['logged_in'] == true){
+if($_SESSION['rol'] == "user"){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@ if($_SESSION['logged_in'] == true){
         <div class="boxcontainer">
         <div class="infobuttons">
                 <button class="blueboxes">
-                <a id="grooteletters" class="active" href="mijnreizen.php">Bekijk mijn rijzen</a>
+                <a id="grooteletters" class="active" href="mijnreizen.php">Bekijk mijn reizen</a>
                 </button>
             <div class="infobuttons">
                 <div class="blueboxes">
@@ -55,4 +55,8 @@ if($_SESSION['logged_in'] == true){
 
 </html>
 <?php
+}
+else
+{
+    header("location:adminpage.php");
 }

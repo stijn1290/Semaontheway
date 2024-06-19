@@ -27,12 +27,18 @@
                     if (session_status() == PHP_SESSION_NONE) {
                         session_start();
                     }
-                    if($_SESSION['logged_in'] == true){
-                        ?><a href="userpage.php"><img src="assets/img/login.png" alt=""></a><?php
+                    if(isset($_SESSION['rol'])){
+                        if($_SESSION['rol'] == "admin"){
+                            ?><a href="adminpage.php"><img src="assets/img/login.png" alt=""></a><?php
+                        }
+                        else if($_SESSION['rol']== "user"){
+                            ?> <a href="userpage.php"><img src="assets/img/login.png" alt=""></a> <?php
+                        }
                     }
                     else{
                         ?> <a href="loginpage.php"><img src="assets/img/login.png" alt=""></a> <?php
                     }
+                   
                     ?>
                 </div>
             </div>
