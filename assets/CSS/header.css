@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100vw;
+    padding: 1vw 2vw;
 }
 
 .logo {
@@ -33,13 +34,13 @@
     background-color: rgba(0, 148, 255, 1);
     color: white;
     text-decoration: none;
-    font-size: 36px;
-    line-height: 25px;
-    margin-right: 200px; 
-    padding: 28px 54px;
-    border-radius: 50px;
-    transition: transform 0.3s; 
-
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    margin-right: 2vw;
+    padding: 1.5vw 3vw;
+    border-radius: 5vw;
+    transition: transform 0.3s;
+}
 }
 .navbuttons a:hover
 {
@@ -50,4 +51,108 @@
 .header-right {
     display: flex;
     align-items: center;
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+    .navbuttons a {
+        font-size: 2vw;
+        line-height: 2vw;
+        padding: 1vw 2.5vw;
+        margin-right: 2vw;
+    }
+
+    .loginbutton {
+        margin-right: 1.5vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbuttons a {
+        font-size: 1.8vw;
+        line-height: 1.8vw;
+        padding: 0.8vw 2vw;
+        margin-right: 2vw;
+    }
+
+    .loginbutton {
+        margin-right: 1.2vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 50vw;
+        margin-bottom: 2vw;
+    }
+
+    .navbuttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .navbuttons a {
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        padding: 2vw 4vw;
+        margin: 1vw 0;
+        width: auto;
+        text-align: center;
+    }
+
+    .loginbutton {
+        margin-right: 0;
+        margin-bottom: 1vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 2vw;
+    }
+
+    .logo {
+        max-width: 60vw;
+    }
+
+    .navbuttons a {
+        font-size: 4vw;
+        line-height: 4vw;
+        padding: 2.5vw 5vw;
+        margin: 1.5vw 0;
+        width: 90%;
+    }
+
+    .loginbutton {
+        margin-bottom: 1.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 3vw;
+    }
+
+    .logo {
+        max-width: 70vw;
+    }
+
+    .navbuttons a {
+        font-size: 5vw;
+        line-height: 5vw;
+        padding: 3vw 6vw;
+        margin: 2vw 0;
+        width: 100%;
+    }
+
+    .loginbutton {
+        margin-bottom: 2vw;
+    }
 }

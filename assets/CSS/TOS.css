@@ -30,6 +30,7 @@ body {
     text-decoration: none;
 }
 .container {
+    margin-top: 2%;
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -49,7 +50,6 @@ li
 {
     font-size: 24px;
 }
-
 #bigtitle
 {
     font-size: 50px;
