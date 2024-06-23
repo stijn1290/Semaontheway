@@ -89,3 +89,90 @@
       width: 70%;
       height: 70%;
   }
+  @media (max-width: 1200px) {
+    .title-myaccount h1 {
+        font-size: 55px;
+    }
+    .boxname h1 {
+        font-size: 80px;
+    }
+    .blueboxes h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .title-myaccount h1 {
+        font-size: 50px;
+    }
+    .boxname h1 {
+        font-size: 70px;
+    }
+    .blueboxes h1 {
+        font-size: 35px;
+    }
+    .blueboxes {
+        height: 240px;
+    }
+    .blueboxes button {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-myaccount h1 {
+        font-size: 45px;
+    }
+    .boxname h1 {
+        font-size: 60px;
+    }
+    .blueboxes h1 {
+        font-size: 30px;
+    }
+    .blueboxes {
+        height: 220px;
+    }
+    .blueboxes button {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title-myaccount h1 {
+        font-size: 40px;
+    }
+    .boxname h1 {
+        font-size: 50px;
+    }
+    .blueboxes h1 {
+        font-size: 25px;
+    }
+    .blueboxes {
+        height: 200px;
+    }
+    .blueboxes button {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .title-myaccount h1 {
+        font-size: 35px;
+    }
+    .boxname h1 {
+        font-size: 40px;
+    }
+    .blueboxes h1 {
+        font-size: 20px;
+    }
+    .blueboxes {
+        height: 180px;
+    }
+    .blueboxes button {
+        width: 50px;
+        height: 50px;
+    }
+}
