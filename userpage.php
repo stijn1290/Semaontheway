@@ -25,32 +25,35 @@ if($_SESSION['rol'] == "user"){
             <h1><?php echo $_SESSION["username"];?></h1>
         </div>
         <div class="boxcontainer">
-        <div class="infobuttons">
-                <button class="blueboxes">
-                <a id="grooteletters" class="active" href="mijnreizen.php">Bekijk mijn reizen</a>
-                </button>
             <div class="infobuttons">
-                <div class="blueboxes">
-                    <h1>Gebruiker: <?php echo $_SESSION["username"] ?></h1>
-                    <h1>Wachtwoord: <?php echo $_SESSION["password"] ?></h1>
-                    <button>
-                        <img src="assets/img/editicon.png" alt="Edit Knop">
-                    </button>
-                </div>
-            </div>
-            <button class="blueboxes">
-                <a id="grooteletters" class="active" href="functions/sessionstop.php">uitloggen</a>
+                <button class="blueboxes">
+                    <a id="grooteletters" class="active" href="mijnreizen.php"><h1>Bekijk mijn reizen</h1></a>
                 </button>
+                <button class="blueboxes">
+                    <a href="review.php"><h1 id="tekstkleur">Plaats een review</h1></a>
+                </button>
+                <div class="infobuttons">
+                    <div class="blueboxes">
+                        <h1>Gebruiker: <?php echo $_SESSION["username"] ?></h1>
+                        <h1>Wachtwoord: <?php echo $_SESSION["password"] ?></h1>
+                        <button>
+                            <img src="assets/img/editicon.png" alt="Edit Knop">
+                        </button>
+                    </div>
+                </div>
+                <button class="blueboxes">
+                    <a id="grooteletters" class="active" href="functions/sessionstop.php">uitloggen</a>
+                </button>
+            </div>
         </div>
-    </div>
-    <?php
+        <?php
     include 'footer.php';
     ?>
 </body>
 <script>
-    function click() {
-        console.log("Clicked");
-    }
+function click() {
+    console.log("Clicked");
+}
 </script>
 
 </html>
