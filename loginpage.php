@@ -30,6 +30,7 @@
                 <form action="functions/register.php" method="POST">
                     <input id="Gebruikersnaam" placeholder="Voer uw Gebruikersnaam in." name="username">
                     <input type="password" id="Wachtwoord" placeholder="Voer uw Wachtwoord in." name="password">
+                    <a id="decoratie" href="TermsOfServices.php"><h1>Terms of service</h1></a>
                     <input type="submit" value="Submit" placeholder="Registreer">
                 </form>
             </div>
@@ -40,6 +41,7 @@
                 <form action="functions/login.php" method="POST">
                     <input id="Gebruikersnaam" placeholder="Voer uw Gebruikersnaam in." name="username">
                     <input type="password" id="Wachtwoord" placeholder="Voer uw Wachtwoord in." name="password">
+                    <a id="decoratie" href="TermsOfServices.php"><h1>Terms of service</h1></a>
                     <input type="submit" value="Submit" placeholder="Log in">
                 </form>
             </div>

@@ -38,9 +38,9 @@
         <div class="groenedeel">
             <h1 id="witteletters">© SemaOnTheWay</h1>
             <nav id="tussenruimtelogo">
-                <i class="fa-brands fa-instagram fa-2xl"></i>
-                <i class="fa-brands fa-facebook fa-2xl"></i>
-                <i class="fa-brands fa-linkedin fa-2xl"></i>
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
             </nav>
         </div>
     </footer>
