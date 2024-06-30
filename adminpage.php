@@ -37,6 +37,9 @@ if($_SESSION['rol'] == "admin")
             <nav class="admin-elementcontainer" onclick="displayTextAccounts()">
                 <h1>accounts</h1>
             </nav>
+            <nav class="admin-elementcontainer" onclick="displayTextReviews()">
+                <h1>reviews</h1>
+            </nav>
         </div>
         <div class="adminelementen">
             <form action="functions/toevoegen.php" method="POST" id="formtoevoegen">
@@ -150,6 +153,31 @@ if($_SESSION['rol'] == "admin")
                 ?>
                 </section>
             </div>
+            <?php
+                include("functions/connection.php");
+                $sql = "SELECT `id`, `bestemming`, `naam`, `email`, `watvondjeervan` FROM `reviews`";
+                $stmt= $conn->prepare($sql);
+                $execute = $stmt->execute();
+                $result = $stmt->fetchAll();
+                ?>
+            <div class="reviewselementen"><?php
+                foreach($result as $row)
+                {
+                    ?>
+                <form action="functions/valideren.php" method="POST" id="formreviews">
+                    <h1>valideren reviews</h1>
+                    <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
+                    <input name="bestemming" type="text" value="Bestemming: <?php echo $row["bestemming"] ?>">
+                    <input name="naam" type="text" value="Naam: <?php echo $row["naam"]?>">
+                    <input name="email" type="text" value="Email: <?php echo $row["email"]?>">
+                    <input name="mening" type="text" value="Mening: <?php echo $row["watvondjeervan"]?>">
+                    <input name="goedkeuren" type="submit" value="goedkeuren" id="goedkeuren">
+                    <input name="afkeuren" type="submit" value="afkeuren" id="afkeuren">
+                </form>
+                <?php
+                }
+                ?>
+            </div>
         </div>
     </section>
     <script>
@@ -158,6 +186,7 @@ if($_SESSION['rol'] == "admin")
         var aanpassen = document.querySelectorAll(".aanpassenelementen");
         var verwijderen = document.querySelectorAll(".verwijderenelementen");
         var accounts = document.querySelectorAll(".accountselementen");
+        var reviews = document.querySelectorAll(".reviewselementen")
         if (toevoegen.style.display === "none") {
             toevoegen.style.display = "block";
             aanpassen.forEach(element => {
@@ -167,6 +196,9 @@ if($_SESSION['rol'] == "admin")
                 element.style.display = "none"
             })
             accounts.forEach(element => {
+                element.style.display = "none"
+            })
+            reviews.forEach(element =>{
                 element.style.display = "none"
             })
         } else {
@@ -180,6 +212,7 @@ if($_SESSION['rol'] == "admin")
         var aanpassen = document.querySelectorAll(".aanpassenelementen");
         var verwijderen = document.querySelectorAll(".verwijderenelementen");
         var accounts = document.querySelectorAll(".accountselementen");
+        var reviews = document.querySelectorAll(".reviewselementen")
         if (aanpassen[0].style.display === "none") {
             toevoegen.style.display = "none";
             aanpassen.forEach(element => {
@@ -189,6 +222,9 @@ if($_SESSION['rol'] == "admin")
                 element.style.display = "none";
             })
             accounts.forEach(element => {
+                element.style.display = "none"
+            })
+            reviews.forEach(element =>{
                 element.style.display = "none"
             })
         } else {
@@ -204,6 +240,7 @@ if($_SESSION['rol'] == "admin")
         var aanpassen = document.querySelectorAll(".aanpassenelementen");
         var verwijderen = document.querySelectorAll(".verwijderenelementen");
         var accounts = document.querySelectorAll(".accountselementen");
+        var reviews = document.querySelectorAll(".reviewselementen")
         if (verwijderen[0].style.display === "none") {
             toevoegen.style.display = "none";
             aanpassen.forEach(element => {
@@ -213,6 +250,9 @@ if($_SESSION['rol'] == "admin")
                 element.style.display = "flex";
             })
             accounts.forEach(element => {
+                element.style.display = "none"
+            })
+            reviews.forEach(element =>{
                 element.style.display = "none"
             })
         } else {
@@ -228,6 +268,7 @@ if($_SESSION['rol'] == "admin")
         var aanpassen = document.querySelectorAll(".aanpassenelementen");
         var verwijderen = document.querySelectorAll(".verwijderenelementen");
         var accounts = document.querySelectorAll(".accountselementen");
+        var reviews = document.querySelectorAll(".reviewselementen")
         if (accounts[0].style.display === "none") {
             toevoegen.style.display = "none";
             aanpassen.forEach(element => {
@@ -239,8 +280,39 @@ if($_SESSION['rol'] == "admin")
             accounts.forEach(element => {
                 element.style.display = "flex"
             })
+            reviews.forEach(element =>{
+                element.style.display = "none"
+            })
         } else {
             accounts.forEach(element => {
+                element.style.display = "none"
+            })
+        }
+    }
+    </script>
+    <script>
+    function displayTextReviews() {
+        var toevoegen = document.getElementById("formtoevoegen");
+        var aanpassen = document.querySelectorAll(".aanpassenelementen");
+        var verwijderen = document.querySelectorAll(".verwijderenelementen");
+        var accounts = document.querySelectorAll(".accountselementen");
+        var reviews = document.querySelectorAll(".reviewselementen")
+        if (reviews[0].style.display === "none") {
+            toevoegen.style.display = "none";
+            aanpassen.forEach(element => {
+                element.style.display = "none"
+            })
+            verwijderen.forEach(element => {
+                element.style.display = "none";
+            })
+            accounts.forEach(element => {
+                element.style.display = "none"
+            })
+            reviews.forEach(element =>{
+                element.style.display = "flex"
+            })
+        } else {
+            reviews.forEach(element => {
                 element.style.display = "none"
             })
         }

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/sanfrancisco.css">
+    <link rel="stylesheet" href="assets/CSS/sanfrancisco.css">
     <link rel="stylesheet" href="js/fieldCheck.js">
 </head>
 
@@ -22,13 +22,44 @@
         </div>
         <div class="container">
             <div class="backgroundinfo">
-                <h1 id="info" >Buenos Aires, de bruisende hoofdstad van Argentinië,  </h1>
+                <h1 id="info">Buenos Aires, de bruisende hoofdstad van Argentinië, </h1>
                 <h1 id="bigtext">wacht op je met zijn levendige cultuur en rijke geschiedenis:</h1>
-                <h1 id="info">Plaza de Mayo: Het politieke hart van de stad met historische gebouwen en standbeelden.</h1>
+                <h1 id="info">Plaza de Mayo: Het politieke hart van de stad met historische gebouwen en standbeelden.
+                </h1>
                 <h1 id="info">La Boca: Bekend om zijn kleurrijke huizen en levendige straatartiesten.</h1>
                 <img src="assets/img/buenos1.png" alt="" width="400px" height="400px">
                 <img src="assets/img/buenos2.png" alt="" width="400px" height="400px">
 
+            </div>
+            <div class="reviews">
+                <h1>reviews</h1>
+                <?php
+                include("functions/connection.php");
+                $sql = "SELECT `id`, `bestemming`, `email`, `naam`, `watvondjeervan` FROM `goedgekeurde_reviews`";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+                $review = false;
+                foreach ($result as $row)
+                {
+                    if($row["bestemming"] == "Bestemming: buenosaires")
+                    {
+                        $review = true;
+                        ?>
+                <div class="reviewstyling">
+                    <h1><?php echo $row["naam"]?></h1>
+                    <h1><?php echo $row["watvondjeervan"]?></h1>
+                </div>
+                <?php
+                    }
+                }
+                if($review == false)
+                {
+                    ?>
+                    <h1>Er zijn (nog) geen reviews geplaatst</h1>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </main>
