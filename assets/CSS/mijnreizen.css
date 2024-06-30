@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  body {
+      background-color: rgba(87, 196, 217, 1);
+  }
+  #grooteletters
+  {
+      text-decoration: none;
+      color: white;
+      font-size: 60px;
+  }
+  .container {
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      width: 100vw;
+      height: 100%;
+  }
+  
+  .title-myaccount {
+      margin-bottom: 50px;
+      margin-top: 50px;
+      gap: 20px;
+      flex-direction: column;
+      display: flex;
+      text-align: center;
+  }
+  
+  .title-myaccount h1 {
+      font-size: 65px;
+  }
+  
+  .boxcontainer {
+      margin-top: 30px;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      height: 400px;
+      width: 50%;
+      border-radius: 70px;
+      background-color: rgba(217, 217, 217, 0.9);
+      opacity: 0.9;
+  }
+  
+  .boxname {
+      margin-bottom: 60px;
+      text-align: center;
+  }
+  
+  .boxname h1 {
+      font-size: 100px;
+  }
+  .infobuttons
+  {
+      gap: 40px;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .blueboxes {
+      background-color: rgba(81, 171, 255, 1);
+      width: 700px;
+      height: 260px;
+  }
+  .blueboxes h1{
+      font-size: 45px;
+      color: white;
+      text-align: center;
+  }
+  .blueboxes button
+  {
+      margin-left: 20px;
+      border: 5px solid black;
+      width: 100px;
+      height: 100px;
+      transition: transform 0.9s; 
+  }
+  .blueboxes img
+  {
+      width: 70%;
+      height: 70%;
+  }
+  .annulerenbox{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  }
